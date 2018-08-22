@@ -5,3 +5,5 @@
 * [HTTPS Trusted SSL Certificate with Flask/Nginx/Gunicorn](./https_ssl_certificate_flask_nginx_gunicorn_supervisor.md)
 
 * [AWS from 10000 meters](./aws_10000.md)
+
+* [Record Based Hive Streaming NiFi Flow](./record_based_hive_streaming_nifi_flow.md)
