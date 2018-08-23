@@ -44,4 +44,4 @@ What are they specifically?
 * `/dev/shm`: is used by the POSIX shared memory facilities.
 * `/run`: contains resource locks and PID files etc. which are relevant to currently-running daemons. `/var/run` and `/var/lock` are symlinks back to `/run` for compatibility reasons.
 * `/sys/fs/cgroup`: contains details for the cgroup system, which is used (mainly by systemd) to divide processes into groups for resource sharing etc.
-* may also have `/media`: contains the mount-points of removable media (e.g. optical discs and USB drives), which are created and removed automatically. 
+* may also have `/media`: contains the mount-points of removable media (e.g. optical discs and USB drives), which are created and removed automatically.

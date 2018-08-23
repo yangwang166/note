@@ -7,3 +7,7 @@
 * [AWS from 10000 meters](./aws_10000.md)
 
 * [Record Based Hive Streaming NiFi Flow](./record_based_hive_streaming_nifi_flow.md)
+
+* [What is your tmpfs devtmpfs in CentOS 7](./tmpfs_devtmpfs_centos7.md)
+
+* [Command OS Command](./os_cmd.md)
