@@ -11,3 +11,5 @@
 * [What is your tmpfs devtmpfs in CentOS 7](./tmpfs_devtmpfs_centos7.md)
 
 * [Command OS Command](./os_cmd.md)
+
+* [Change Kafka Replication Factor](./change_kafka_replication_factor.md)
