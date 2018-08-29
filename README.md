@@ -46,3 +46,8 @@
 ### DB
 
 * [Oracle](./oracle.md)
+
+## Todo List
+
+* Migrate `how2` on my laptop to here
+* Organise and migrate evernote knowledge to here
