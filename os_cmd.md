@@ -32,3 +32,13 @@ To see which process using the file
 > `lsof file_name`
 
 Ref: [lsof Command Usage and Examples](https://www.slashroot.in/lsof-command-usage-and-examples)
+
+## yum
+
+Check package version
+
+> `yum info package_name`
+
+Redhat Satellite repo, list enabled repo
+
+> `subscription-manager repos --list-enabled`
