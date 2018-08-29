@@ -42,3 +42,27 @@ Check package version
 Redhat Satellite repo, list enabled repo
 
 > `subscription-manager repos --list-enabled`
+
+Show repo list, can know which status of repo whether enable or disable
+
+> `yum repolist all`
+
+Show what particular version of package are available
+
+> `yum --showduplicates list package_name`
+
+Install a particular version package
+
+> `yum install <package name>-<version info>`
+
+eg:
+
+> `yum install <httpd>-<2.4.6-6>`
+
+Enable a repo
+
+> `subscription-manager repos --enable=repo_name`
+
+Disable a repo
+
+> `subscription-manager repos --disable=repo_name`

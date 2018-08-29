@@ -22,6 +22,7 @@
 #yum remove spark2*
 #yum remove spark*
 #yum remove ambari-infra-solr-client
+#yum remove bigtop-jsvc
 
 rm -rf /var/log/ambari-agent
 rm -rf /var/log/ambari-metrics-grafana
@@ -78,6 +79,7 @@ rm -rf /etc/zookeeper
 
 rm -rf /var/run/ambari-agent
 rm -rf /var/run/ambari-metrics-grafana
+rm -rf /var/run/ambari-metrics-monitor
 rm -rf /var/run/ambari-server
 rm -rf /var/run/falcon
 rm -rf /var/run/flume
