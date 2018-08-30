@@ -15,10 +15,12 @@
 ### AWS
 
 * [AWS from 10000 meters](./aws_10000.md)
+* [AWS IAM](./aws_identity_access_management.md)
 * [AWS Certificates](./aws_certificates.md)
 * [AWS Questions](./aws_questions.md)
 
 ## Hadoop Ecosystem
+
 
 ### HDP
 
@@ -29,6 +31,12 @@
 
 * [Record Based Hive Streaming NiFi Flow](./record_based_hive_streaming_nifi_flow.md)
 * [Change Kafka Replication Factor](./change_kafka_replication_factor.md)
+
+### Ambari
+
+* [Ansible General](./ansible.md)
+* [Ambari General](./ambari.md)
+
 
 ## Misc
 
@@ -46,6 +54,12 @@
 ### DB
 
 * [Oracle](./oracle.md)
+
+### Git
+
+* [Git General](./git.md)
+
+
 
 ## Todo List
 
