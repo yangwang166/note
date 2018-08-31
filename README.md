@@ -14,54 +14,53 @@
 
 ### AWS
 
-* [AWS from 10000 meters](./aws_10000.md)
-* [AWS IAM](./aws_identity_access_management.md)
-* [AWS S3](./aws_s3.md)
-* [AWS Cli](./aws_cli.md)
-* [AWS Certificates](./aws_certificates.md)
-* [AWS Questions](./aws_questions.md)
+* [AWS from 10000 meters](./aws/aws_10000.md)
+* [AWS IAM](./aws/aws_identity_access_management.md)
+* [AWS S3](./aws/aws_s3.md)
+* [AWS Cli](./aws/aws_cli.md)
+* [AWS Certificates](./aws/aws_certificates.md)
+* [AWS Questions](./aws/aws_questions.md)
 
 ## Hadoop Ecosystem
 
 
 ### HDP
 
-* [Druid General Usage](./druid.md)
-* [Uninstall Ambari HDP](./uninstall_ambari_hdp.md)
-* [Run HDP HDF in Docker](./hdp_hdf_docker.md)
-* [Run HDP in docker](./hdp_docker.md)
+* [Druid General Usage](./hdp/druid.md)
+* [Uninstall Ambari HDP](./hdp/uninstall_ambari_hdp.md)
+* [Run HDP HDF in Docker](./hdp/hdp_hdf_docker.md)
 
 ### HDF
 
-* [Record Based Hive Streaming NiFi Flow](./record_based_hive_streaming_nifi_flow.md)
-* [Change Kafka Replication Factor](./change_kafka_replication_factor.md)
+* [Record Based Hive Streaming NiFi Flow](./hdf/record_based_hive_streaming_nifi_flow.md)
+* [Change Kafka Replication Factor](./hdf/change_kafka_replication_factor.md)
 
 ### Ambari
 
-* [Ansible General](./ansible.md)
-* [Ambari General](./ambari.md)
+* [Ansible General](./ambari/ansible.md)
+* [Ambari General](./ambari/ambari.md)
 
 
 ## Misc
 
 ### Web
 
-* [HTTPS Trusted SSL Certificate with Flask/Nginx/Gunicorn](./https_ssl_certificate_flask_nginx_gunicorn_supervisor.md)
-* [Markdown syntax](./markdown.md)
+* [HTTPS Trusted SSL Certificate with Flask/Nginx/Gunicorn](./web/https_ssl_certificate_flask_nginx_gunicorn_supervisor.md)
+* [Markdown syntax](./web/markdown.md)
 
 ### Operating System
 
-* [Command OS Command](./os_cmd.md)
-* [Stuck in waiting for header when apt update in ubuntu](./solve_waiting_for_header_apt_update.md)
-* [What is your tmpfs devtmpfs in CentOS 7](./tmpfs_devtmpfs_centos7.md)
+* [Command OS Command](./os/os_cmd.md)
+* [Stuck in waiting for header when apt update in ubuntu](./os/solve_waiting_for_header_apt_update.md)
+* [What is your tmpfs devtmpfs in CentOS 7](./os/tmpfs_devtmpfs_centos7.md)
 
 ### DB
 
-* [Oracle](./oracle.md)
+* [Oracle](./db/oracle.md)
 
 ### Git
 
-* [Git General](./git.md)
+* [Git General](./git/git.md)
 
 
 
