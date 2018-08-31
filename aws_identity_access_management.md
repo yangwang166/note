@@ -119,3 +119,43 @@ After that, we can apply this role to an EC2 instance to access S3
 Let's take a look my final dashboard, which have 2 users, and 2 groups, and 3 roles, and all green for security status.
 
 ![Final dashboard](images/aws_iam/final_dashboard.png)
+
+## Create a billing alarm
+
+Create a alarm when aws account goes over $10.
+
+The alarm will send me an email.
+
+Sometime it's really easy to forget shutdown things.
+
+And some AWS things `really hidden`.
+
+One enable monitor your estimated charges, it cannot be disabled.
+
+And it will use `CloudWatch` to monitor it.
+
+![Billing Alert](images/aws_iam/bill_alert.png)
+
+## Wrap up
+
+IAM consists of the following:
+* User
+* Groups
+* Roles
+* Policy Documents
+
+IAM is universal, it does not apply to regions at this time
+
+The 'Root account' is simply the account created when first setup your aws account, it has complete admin access
+
+New user have no permission when first created
+
+New user are assigned `Access Key ID & Secret Access Key` when first created
+
+These are not the same as password, and you cannot use the Access Key ID & Secret Access Key to Login in to the console. You can use this to access AWS via API or SDK and Command Line however.
+
+You only get to view these once. If you lose them, you have to regenerate them. So save them in a secure location
+
+Always setup multifactor authentication on your root account
+
+you can create and customise your own password rotation policies
