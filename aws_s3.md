@@ -17,7 +17,7 @@ Contract to block-based storage
 Basic
 * File can be from 0 bytes to 5TB
 * There is unlimited storage
- * pay by the G
+  * pay by the G
 * File are stored in Buckets
  * a folder inside cloud
  * has a universal name, unique globally
