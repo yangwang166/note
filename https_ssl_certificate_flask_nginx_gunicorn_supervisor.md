@@ -68,11 +68,10 @@ You may ask why we need both Nginx/Gunicorn/Supervisord for a Flask app. Here ar
 * Nginx cannot directly talk to Flask, so we need Gunicorn
 * Supervisord is not a must have components, it makes the Flask App run as a service.
 * Components summaries
- * Flask: App server backend
- * Nginx: Web Server & Reverse Proxy Server
- * Gunicorn: Deploy Flask Apps, a Python WSGI HTTP Server
- * Supervisor: Monitor and control Gunicorn process
- *
+  * Flask: App server backend
+  * Nginx: Web Server & Reverse Proxy Server
+  * Gunicorn: Deploy Flask Apps, a Python WSGI HTTP Server
+  * Supervisor: Monitor and control Gunicorn process
 * Ref: [Why do I need Nginx and something like Gunicorn?](https://serverfault.com/questions/331256/why-do-i-need-nginx-and-something-like-gunicorn)
 
 ### Install required packages:

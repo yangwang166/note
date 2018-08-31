@@ -9,7 +9,7 @@ Essentially, IAM allows you to manage users and their level of access to the AWS
 * Granular Permissions
 * Identity Federation (including Active Directory, Facebook, Linkedn etc)
 * Multifactor Authentication (MFA)
- * like 2 factor authentication
+  * like 2 factor authentication
 * Provide temporary access for users/devices and services where necessary
 * Allows you to set up your own password rotation policy
 * Integrates with many different AWS services
@@ -19,18 +19,18 @@ Critical Terms:
 
 * User - End User(think people)
 * Groups - A collection of users under one set of permissions
- * group user together, and apply sets of permissions
+  * group user together, and apply sets of permissions
 * Roles - you create roles and can then assign them to AWS resources
- * very important
- * like give EC2 a role to access S3, and you don't need to setup a username or password for that EC2
+  * very important
+  * like give EC2 a role to access S3, and you don't need to setup a username or password for that EC2
 * Policies - A document that defines one (or more permissions)
- * attach policies to users/groups/roles
+  * attach policies to users/groups/roles
 
 * IAM is global, it's universally available
 
 * IAM users sign-in link
- * https://aws_account_number.signin.aws.amazon.com/console
- * you can customize it, like https://yangwang166.signin.aws.amazon.com/console
+  * https://aws_account_number.signin.aws.amazon.com/console
+  * you can customize it, like https://yangwang166.signin.aws.amazon.com/console
 
 ![IAM dashboard](images/aws_iam/iam_dashboard.png)
 
@@ -100,7 +100,7 @@ Here we attach directly `AmazonGlacierReadOnlyAccess` policy to `ling` and she a
 IAM roles are a secure way to grant permissions to entities that you trust. Examples of entities includes the following:
 * IAM user in another account
 * Application code running on an EC2 instance that needs to perform actions on AWS resources
- * **most common**
+  * **most common**
 * An AWS service that needs to act on resources in your account to provide its features
 * Users from a corporate directory who use identity federation with SAML
 
