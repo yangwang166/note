@@ -141,3 +141,5 @@ Basic
 * Delete markers are replicated
 * Deleting individual versions or delete markers will not be replicated
 * Understand what Cross Region Replication is at a high level
+
+## Lifecycle Management
