@@ -16,6 +16,8 @@
 
 * [AWS from 10000 meters](./aws_10000.md)
 * [AWS IAM](./aws_identity_access_management.md)
+* [AWS S3](./aws_s3.md)
+* [AWS Cli](./aws_cli.md)
 * [AWS Certificates](./aws_certificates.md)
 * [AWS Questions](./aws_questions.md)
 
@@ -26,6 +28,8 @@
 
 * [Druid General Usage](./druid.md)
 * [Uninstall Ambari HDP](./uninstall_ambari_hdp.md)
+* [Run HDP HDF in Docker](./hdp_hdf_docker.md)
+* [Run HDP in docker](./hdp_docker.md)
 
 ### HDF
 
