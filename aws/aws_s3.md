@@ -54,7 +54,7 @@ Basic
         * Standard: 3-5 hours to restore
         * Bulk: 5-12 hours to restore
 
-![S3 Tiers](images/aws_s3/s3_tiers.png)
+![S3 Tiers](../images/aws_s3/s3_tiers.png)
 
 https://aws.amazon.com/s3/storage-classes/
 
@@ -151,15 +151,15 @@ we can add multiple transition
 * 30 days from s3-standard to s3-standard-IA
 * 60 days from s3-standard to glacier
 
-![S3 lifecycle](images/aws_s3/s3_lifecycle.png)
+![S3 lifecycle](../images/aws_s3/s3_lifecycle.png)
 
 Also, can expire object
 
-![S3 lifecycle](images/aws_s3/s3_lifecycle_expire.png)
+![S3 lifecycle](../images/aws_s3/s3_lifecycle_expire.png)
 
 Then let's see the rule we create:
 
-![S3 lifecycle](images/aws_s3/s3_lifecycle_rule.png)
+![S3 lifecycle](../images/aws_s3/s3_lifecycle_rule.png)
 
 * can be used in conjunction with versioning
 * can be applied to current versions and previous versions

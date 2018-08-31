@@ -1,9 +1,9 @@
 # HTTPS site with SSL certificate using Flask/Gunicorn/Nginx/Supervisord
 
 [//]: # (Image References)
-[img1]: ./images/https_ssl_certificate_flask_nginx_gunicorn_supervisor/your_connection_is_not_private.png
-[img2]: ./images/https_ssl_certificate_flask_nginx_gunicorn_supervisor/CSR.png
-[img3]: ./images/https_ssl_certificate_flask_nginx_gunicorn_supervisor/https.png
+[img1]: ../images/https_ssl_certificate_flask_nginx_gunicorn_supervisor/your_connection_is_not_private.png
+[img2]: ../images/https_ssl_certificate_flask_nginx_gunicorn_supervisor/CSR.png
+[img3]: ../images/https_ssl_certificate_flask_nginx_gunicorn_supervisor/https.png
 
 In this post, I will make a Flask Web App with trusted SSL certificate. A trusted SSL certificate can give your user more confident of your App. Let's do it. In addition, this post also illustrate how to setup a simple Flask Apps with Nginx/Gunicorn/Supervisord.
 

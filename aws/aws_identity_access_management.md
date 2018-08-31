@@ -32,7 +32,7 @@ Critical Terms:
   * https://aws_account_number.signin.aws.amazon.com/console
   * you can customize it, like https://yangwang166.signin.aws.amazon.com/console
 
-![IAM dashboard](images/aws_iam/iam_dashboard.png)
+![IAM dashboard](../images/aws_iam/iam_dashboard.png)
 
 The root account is the account using the aws email login. The root account have the root level access. It
 
@@ -47,19 +47,19 @@ We should use root account as minimum as possible, then create user and group, a
 
 ## Activate MFA on your root account
 
-![Activate MFA](images/aws_iam/activate_mfa.png)
+![Activate MFA](../images/aws_iam/activate_mfa.png)
 
 We use virtual MFA device
 
-![Virtual MFA](images/aws_iam/virtual_mfa.png)
+![Virtual MFA](../images/aws_iam/virtual_mfa.png)
 
 After registered with Google Authenticator on my iphone
 
-![MFA Successful](images/aws_iam/mfa_ok.png)
+![MFA Successful](../images/aws_iam/mfa_ok.png)
 
 ## Create Individual IAM users
 
-![Add User](images/aws_iam/add_user.png)
+![Add User](../images/aws_iam/add_user.png)
 
 Then create group and set permission
 
@@ -68,18 +68,18 @@ Let's create a system-admins group for `yang` and `ling`, and attach some policy
 For a particular Policies, can click it and check the detail in JSON tab
 
 
-![Create Group and Set Policy](images/aws_iam/group_policy.png)
+![Create Group and Set Policy](../images/aws_iam/group_policy.png)
 
 More policy details
 
-![More policy](images/aws_iam/more_policy.png)
+![More policy](../images/aws_iam/more_policy.png)
 
 > AdministratorAccess policy same as root level policy
 
 
-![Administrator Access](images/aws_iam/admin_access.png)
+![Administrator Access](../images/aws_iam/admin_access.png)
 
-![Create Users](images/aws_iam/create_users.png)
+![Create Users](../images/aws_iam/create_users.png)
 
 * The `Access key ID` & `Secret access key` is the token used for programatically access aws, eg copy file from local laptop to S3
 * When login to aws console, use the `User` and `Password`
@@ -89,11 +89,11 @@ We can attach policy to group also directly to user
 
 Here we attach directly `AmazonGlacierReadOnlyAccess` policy to `ling` and she also have the policy `AmazonS3ReadOnlyAccess` from group.
 
-![Add Policy](images/aws_iam/add_policy.png)
+![Add Policy](../images/aws_iam/add_policy.png)
 
 ## Config Password Policy
 
-![IAM password policy](images/aws_iam/iam_password_policy.png)
+![IAM password policy](../images/aws_iam/iam_password_policy.png)
 
 ## Roles
 
@@ -106,19 +106,19 @@ IAM roles are a secure way to grant permissions to entities that you trust. Exam
 
 IAM roles issue keys that are valid for short durations, making them a more secure way to grant access.
 
-![Create Role](images/aws_iam/create_role.png)
+![Create Role](../images/aws_iam/create_role.png)
 
 Let's say we want our EC2 instance to store file to S3
 
-![EC2 Role](images/aws_iam/ec2_role.png)
+![EC2 Role](../images/aws_iam/ec2_role.png)
 
-![EC2 Role with S3 full access policy](images/aws_iam/ec2_role_s3.png)
+![EC2 Role with S3 full access policy](../images/aws_iam/ec2_role_s3.png)
 
 After that, we can apply this role to an EC2 instance to access S3
 
 Let's take a look my final dashboard, which have 2 users, and 2 groups, and 3 roles, and all green for security status.
 
-![Final dashboard](images/aws_iam/final_dashboard.png)
+![Final dashboard](../images/aws_iam/final_dashboard.png)
 
 ## Create a billing alarm
 
@@ -134,7 +134,7 @@ One enable monitor your estimated charges, it cannot be disabled.
 
 And it will use `CloudWatch` to monitor it.
 
-![Billing Alert](images/aws_iam/bill_alert.png)
+![Billing Alert](../images/aws_iam/bill_alert.png)
 
 ## Wrap up
 
