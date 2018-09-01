@@ -167,3 +167,27 @@ Then let's see the rule we create:
   * transition to the Standard - IA (30 days after creation)
   * archive to the Glacier Storage Class (30 days after IA)
 * Permanently Delete
+
+
+## Security & Encryption
+
+* Securing
+  * By default, all newly created buckets are private
+  * You can setup access control to your buckets using:
+    * Bucket Policies
+    * Access Control Lists
+  * S3 buckets can be configured to create access logs which log all requests make to the S3 bucket. This can be done to another bucket or another account
+
+* Encryption
+  * In Transit
+    * to and from S3 bucket
+    * SSL/TLS (TLS to replace SSL)
+    * Using HTTPS 
+  * At Rest
+    * Server side encryption
+      * S3 Managed Keys - SSE-S3
+      * AWS Key Management Service, Managed Keys - SSE-KMS
+        * Audit Track
+      * Server Side Encryption With Customer Provided Keys - SSE-C
+        * You managed key yourself
+    * Client Side encryption

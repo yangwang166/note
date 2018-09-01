@@ -34,3 +34,9 @@ Copy all object between s3 buckets, using cross region replication.
 copy: s3://willwywang/hiaws.txt to s3://willwywang-singapore/hiaws.txt
 copy: s3://willwywang/s3_tiers.png to s3://willwywang-singapore/s3_tiers.png
 ```
+
+Copy local file to S3
+
+```
+aws s3 cp . s3://willwxxxxxte/ --recursive
+``
