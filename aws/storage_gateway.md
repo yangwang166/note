@@ -39,7 +39,7 @@ Tape Gateway
 * Just use virtual tape instead of physical tape, which sending to S3
 * ![File Gateway](../images/aws_storage_gateway/tape_gateway.png)
 
-Wrap up
+## Wrap up
 * File gateway - for flat files, stored directly on S3, image file, pdf file, not os file, db file
 * Volume Gateway
   * Stored Volumes - Entire Dataset is stored on site and is asynchronously backed up to S3

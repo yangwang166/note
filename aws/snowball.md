@@ -46,4 +46,14 @@
 * example
   * `snowball start -i 192.168.1.xx -m xxx_manifest.bin -u credential`
   * `snowball cp hello.txt s3://bucket_name`
-  *
+
+## Wrap up
+
+* snowball
+* snowball edge
+* snowmobile
+* understand what snowball is
+* understand what import/export is
+* snowball can
+  * import to S3
+  * export from S3 

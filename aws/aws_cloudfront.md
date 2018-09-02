@@ -29,3 +29,14 @@ Key Terminology:
 `Amazon CloudFront` can be used to deliver your `entire website`, including `dynamic`, `static`, `streaming`, and `interactive content` using a global network of `edge locations`. Requests for your content are automatically routed to the nearest edge location, so content is delivered with the best possible performance.
 
 CloudFront also can distribute `non-AWS` origin content.
+
+## Wrap up
+
+* Edge Location: where content will be cached, separate to an AWS region/AZ
+* Origin: all the files that the CDN will distribute. This can be either an S3 bucket, an EC2 instance, an Elastic Load Balance or Route53
+* Distribution: the name given the CDN which consists of a collection of Edge locations
+  * web distribution: websites
+  * RTMP: media streaming
+* Edge locations are not just READ only, you can write to them too. eg PUT an object on to them
+* Objects are cached for the life of TTL (time to live), default is 24 hours, but can change
+* You can clear cached objects, but you will be charged.

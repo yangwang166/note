@@ -209,9 +209,86 @@ S3 Transfer Acceleration utilises the CloudFront Edge Network to accelerate your
 
 ## Create A static website using S3
 
-* No worry
+* No worry about
   * maintenance
   * service involved
   * underlying infrastructure
   * scaling
   * load balance
+
+* domain name and s3 bucket name should be exactly the same
+
+* website url: `bucketname.s3-website-regionname.amazonaws.com`
+
+
+## Wrap up all
+
+* Object based, upload files
+* files can be from 0 to 5TB
+* unlimited storage
+* stored in buckets
+* s3 bucket name must be unique globally, it's universal namespace
+* url: https://s3-region.amazonaws.com/bucketname
+* Read after Write consistency for PUTS of new Objects
+* Eventual Consistency for overwrite PUTS and DELETES (can take some time to propagate)
+* S3 Storage Tiers/Classes
+  * S3 Standard: 99.99% availability, 99.99999999% durability, stored redundantly across multiple devices in multiple facilities, and is designed to sustain the loss of 2 facilities concurrently
+  * S3 IA: Infrequently Accessed, for data that is accessed less frequently, but requires rapid access when needed. Lower fee than S3, but you are charged a retrieval fee.
+  * S3 One Zone IA: want a lower-cost option for infrequently accessed data, but do not require the multiple AZ data resilience.
+  * Glacier: very cheap, but used for archival only. Expedited, standard, or bulk. A standard retrieval time takes 3-5 hours.  
+* Core fundamentals
+  * Key: name
+  * Value: data
+  * Version ID
+  * Metadata
+  * Access control list
+* object based storage only, for files
+* not suitable to install an operating system on
+* Versioning
+  * Stores all versions of an object, including all writes and even if you delete an object
+  * great backup tool
+  * once enabled, versioning cannot be disabled, only suspended
+  * integrate with lifecycle rules
+  * versioning's MFA Delete capability, which uses multi-factor authentication, can be used to provide an additional layer of security
+  * Cross Region Replication, requires versioning enabled on the source bucket
+* Lifecycle Management
+  * Can be used in conjunction with versioning
+  * Can be applied to current versions and previous versions
+  * Following action can now be done:
+    * Transition to the Standard - IA storage class, (need at least 128Kb and 30 days after the creation date)
+    * Archive to the Glacier Storage Class(30 days after IA, if relevant)
+    * Permanently Delete
+* Securing your buckets
+  * By default, all newly created buckets are Private
+  * You can setup access control to your buckets using:
+    * Bucket Policies
+    * Access control list
+  * S3 buckets can be configured to create access logs which log all requests made to the S3 bucket. This can be done to another bucket
+* Encryption
+  * In Transit
+    * SSL/TLS, HTTPS
+  * At Rest
+    * Server side:
+      * S3 Managed Keys: SSE-S3
+      * AWS Key Management Service, Managed Keys: SSE-KMS
+      * Server side Encryption with customer provided keys: SSE-C
+    * Client Side Encryption
+* S3 Transfer Acceleration
+  * speed up to S3 using S3 transfer acceleration, extra cost, and has the greatest impact on people who are in far away location
+* S3 Static Website
+  * S3 can host static website
+  * server-less
+  * very cheap, scales automatically
+  * static only, cannot host dynamic sites
+* write to s3 - HTTP 200 code for a successful write
+* you can load files to s3 much faster by enabling multipart upload for big file
+* Read S3 FAQ! It comes up A LOT!
+
+## Questions
+
+* RRS: `Reduced Redundancy Storage`, availability is 99.99%, durability also is 99.99%
+* You run a meme creation website that frequently generates meme images. The original images are stored in S3 and the meta data about the memes are stored in DynamoDB. You need to store the memes themselves in a low cost storage solution. If an object is lost, you have created a Lambda function that will automatically recreate this meme using the original file in S3 and the metadata in Dynamodb. Which storage solution should you consider to store this non-critical, easily reproducible data on in the most cost effective solution as possible?
+  * S3 - RRS
+* You run a popular photo sharing website that is based off S3. You generate revenue from your website via paid for adverts, however you have discovered that other websites are linking directly to the images on your site, and not to the HTML pages that serve the content. This means that people are not seeing your adverts and every time a request is made to S3 to serve an image it is costing your business money. How could you resolve this issue?
+  * Remove the ability for images to be served publicly to the site and then used signed URL's with expiry dates
+  * `???`
