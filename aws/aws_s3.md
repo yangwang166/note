@@ -182,7 +182,7 @@ Then let's see the rule we create:
   * In Transit
     * to and from S3 bucket
     * SSL/TLS (TLS to replace SSL)
-    * Using HTTPS 
+    * Using HTTPS
   * At Rest
     * Server side encryption
       * S3 Managed Keys - SSE-S3
@@ -191,3 +191,27 @@ Then let's see the rule we create:
       * Server Side Encryption With Customer Provided Keys - SSE-C
         * You managed key yourself
     * Client Side encryption
+
+## S3 Transfer Acceleration
+
+S3 Transfer Acceleration utilises the CloudFront Edge Network to accelerate your uploads to S3. Instead of uploading directly to your S3 bucket, you can use a distinct URL to upload directly to an edge location which will then transfer that file to S3. You will get a distinct URL to upload to, eg `xxx.s3-accelerate.amazonaws.com`
+
+![S3 lifecycle](../images/aws_s3/s3_transfer_acceleration.png)
+
+
+* eg: `willxxxxxxation.s3-accelerate.amazonaws.com`
+
+![S3 lifecycle](../images/aws_s3/s3_transfer_acceleration_enable.png)
+
+* A page show Speed Comparison, know how it accelerate
+
+  * ![S3 lifecycle](../images/aws_s3/s3_transfer_acceleration_compare.png)
+
+## Create A static website using S3
+
+* No worry
+  * maintenance
+  * service involved
+  * underlying infrastructure
+  * scaling
+  * load balance
