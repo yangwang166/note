@@ -18,6 +18,12 @@ Default region name [None]: ap-southeast-2
 Default output format [None]:
 ```
 
+You can use `--profile name` to use different account
+```
+aws configure --profile name
+aws s3 ls --profile name
+```
+
 Use aws cli
 
 ```

@@ -66,3 +66,7 @@ Enable a repo
 Disable a repo
 
 > `subscription-manager repos --disable=repo_name`
+
+Find the external mounting point
+
+> `cat /proc/mount | grep what_you_want`

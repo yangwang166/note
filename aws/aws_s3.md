@@ -59,8 +59,6 @@ Basic
 https://aws.amazon.com/s3/storage-classes/
 
 
-
-
 ## Data Consistency Model for S3
 
 * Read after Write consistency for PUTS of new Object
@@ -284,11 +282,20 @@ S3 Transfer Acceleration utilises the CloudFront Edge Network to accelerate your
 * you can load files to s3 much faster by enabling multipart upload for big file
 * Read S3 FAQ! It comes up A LOT!
 
+## RRS (Reduced Redundancy Storage)
+
+* availability is 99.99%,
+* durability also is 99.99%
+* RRS is an Amazon S3 storage option that enables customers to store noncritical, reproducible data at lower levels of redundancy than Amazon S3’s standard storage.
+* Reduced Redundancy Storage
+  * ![S3 lifecycle](../images/aws_s3/s3_rrs.png)
+* S3 Tier compare
+  * ![S3 lifecycle](../images/aws_s3/s3_rrs.png)
+
+
 ## Questions
 
-* RRS: `Reduced Redundancy Storage`, availability is 99.99%, durability also is 99.99%
 * You run a meme creation website that frequently generates meme images. The original images are stored in S3 and the meta data about the memes are stored in DynamoDB. You need to store the memes themselves in a low cost storage solution. If an object is lost, you have created a Lambda function that will automatically recreate this meme using the original file in S3 and the metadata in Dynamodb. Which storage solution should you consider to store this non-critical, easily reproducible data on in the most cost effective solution as possible?
-  * S3 - RRS
+  * S3 - `RRS`
 * You run a popular photo sharing website that is based off S3. You generate revenue from your website via paid for adverts, however you have discovered that other websites are linking directly to the images on your site, and not to the HTML pages that serve the content. This means that people are not seeing your adverts and every time a request is made to S3 to serve an image it is costing your business money. How could you resolve this issue?
   * Remove the ability for images to be served publicly to the site and then used signed URL's with expiry dates
-  * `???`
