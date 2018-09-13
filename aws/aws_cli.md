@@ -45,4 +45,18 @@ Copy local file to S3
 
 ```
 aws s3 cp . s3://willwxxxxxte/ --recursive
-``
+```
+
+## Issues: `ImportError: cannot import name 'AliasedEventEmitter`
+
+```
+root@4bb9fb7646f9:/# aws
+Traceback (most recent call last):
+  File "/usr/local/bin/aws", line 19, in <module>
+    import awscli.clidriver
+  File "/usr/local/lib/python3.5/dist-packages/awscli/clidriver.py", line 19, in <module>
+    from botocore.hooks import AliasedEventEmitter
+ImportError: cannot import name 'AliasedEventEmitter'
+```
+
+Solved by `pip install awscli --upgrade`
