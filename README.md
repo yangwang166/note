@@ -17,6 +17,8 @@
 * [AWS from 10000 meters](./aws/aws_10000.md)
 * [AWS IAM](./aws/aws_identity_access_management.md)
 * [AWS S3](./aws/aws_s3.md)
+* [AWS EC2](./aws/aws_ec2.md)
+* [AWS S3](./aws/aws_s3.md)
 * [AWS Storage Gateway](./aws/storage_gateway.md)
 * [AWS Snowball](./aws_snowball.md)
 * [AWS DB 101](./aws_db_101.md)
