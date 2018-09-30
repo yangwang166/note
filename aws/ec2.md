@@ -84,6 +84,7 @@
   * install a httpd: `yum install httpd -y`
   * create a file in `/var/www/html/index.html` with content `<html><h1>Hello AWS!</h1></html>`
   * start htppd: `service httpd start`
+  * make sure service start on reboot: `chkconfig httpd on`
   * You get:
     * ![Hello](../images/aws_ec2/hello.png)
 
@@ -98,4 +99,21 @@
   * Basic monitoring is every 5 mins
   * We can turn on detail monitoring, which is every 1 min, will cost a little bit extra
   * ![Monitoring](../images/aws_ec2/monitoring.png)
-  
+
+* Tips 1
+  * ![Tip1](../images/aws_ec2/tip1.png)
+
+* Security Group
+  * A virtual firewall
+  * rules apply immediately
+  * security group is stateful
+  * everything is blocked by default
+  * ![Tip2](../images/aws_ec2/tip2.png)
+
+* EBS, Volumes & Snapsots
+  * ![Tip3](../images/aws_ec2/tip3.png)
+  * ![Tip4](../images/aws_ec2/tip4.png)
+  * ![Tip5](../images/aws_ec2/tip5.png)
+
+* RAID, Volumes, Snapshots
+  * 
