@@ -46,3 +46,12 @@
     5. Generate Client Certificate
     6. Import Client Certificate into Server TrustStore
   * At last, client and server only need `TrustStore` and `KeyStore`
+
+
+* Good to read and ref:
+  * One Way and Two Way SSL authentication
+    * http://alvinhu.com/blog/2013/06/20/one-way-and-two-way-ssl-authentication/
+  * Everything You Ever Wanted to Know About SSL (but Were Afraid to Ask)
+    * https://www.oschina.net/translate/everything-you-ever-wanted-to-know-about-ssl?cmp
+  * SSL/TLS protocol and OpenSSL Tool
+    * https://www.jianshu.com/p/da65e5cd552e
