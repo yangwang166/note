@@ -112,8 +112,42 @@
 
 * EBS, Volumes & Snapsots
   * ![Tip3](../images/aws_ec2/tip3.png)
+  * -
   * ![Tip4](../images/aws_ec2/tip4.png)
+  * -
   * ![Tip5](../images/aws_ec2/tip5.png)
 
 * RAID, Volumes, Snapshots
-  * 
+  * Remember the Lab using Windows Server 2016 to Create a RAID0 Array
+  * Question: How can I take a Snapshot of a RAID Array?
+  * ![raid](../images/aws_ec2/raid.png)
+    * Stop the application from wrting to disk
+    * Flash all caches to the disk
+    * How can we do this?
+      * Freeze the file system
+      * Unmount the RAID Array
+      * Shutting down the associated EC2 instance.
+
+* Encrypted Root Device Volumes & Snapshots
+  * Stop instance for consistency
+  * Create a snapshot
+  * Copy snapshot to another Region
+    * You can encryption this snapshot
+  * Change region to find the newly copied snapshot
+  * Create a image from this EBS snapshot
+  * Use this image to boot a ec2 instance which root volume is encrypted
+  * Tips
+    * To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the instance before taking the snapshot
+    * Snapshots of encrypted volumes are encrypted automatically
+    * Volumes restored from encrypted snapshots are encrypted automatically
+    * You can share snapshots, but only if they are unencrypted
+      * these snapshots can be shared with other AWS accounts or made public
+
+* AMI Types (EBS vs Instance Store)
+  * You can select your AMI based on
+    * ![ami type](../images/aws_ec2/ami_types.png)
+      * instance store can't be stop, only terminate and restart, get less durability
+  * EBS vs Instance Store
+    * ![vs](../images/aws_ec2/ebs_vs_instance.png)
+  * tips
+    * ![ami tips](../images/aws_ec2/ebs_tips.png)
