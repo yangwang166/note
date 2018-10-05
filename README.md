@@ -42,6 +42,7 @@
 
 * [Record Based Hive Streaming NiFi Flow](./hdf/record_based_hive_streaming_nifi_flow.md)
 * [Change Kafka Replication Factor](./hdf/change_kafka_replication_factor.md)
+* [Call NiFi API with client certificate](./hdf/nifi_api_with_certificate.md)
 
 ### Ambari
 
