@@ -195,3 +195,68 @@ Certificate was added to keystore
     * https://www.oschina.net/translate/everything-you-ever-wanted-to-know-about-ssl?cmp
   * SSL/TLS protocol and OpenSSL Tool
     * https://www.jianshu.com/p/da65e5cd552e
+
+
+## Using OpenSSL
+
+### 1 Generate Server KeyStore
+
+* alias: `server`
+* validity: 3650 days
+* alg: RSA
+* private key password: 123456
+* keystore password: 123456
+
+
+```
+>mkdir server
+>mkdir server
+[15:03:46] 😜  ywang@HW12273: ~/key2
+>keytool -genkey -alias server -validity 3650 -keyalg RSA -keysize 1024 -keypass 123456 -storepass 123456 -keystore server/server.jks
+
+What is your first and last name?
+  [Unknown]:  Yang Wang
+What is the name of your organizational unit?
+  [Unknown]:  Hortonworks
+What is the name of your organization?
+  [Unknown]:  PS
+What is the name of your City or Locality?
+  [Unknown]:  Perth
+What is the name of your State or Province?
+  [Unknown]:  WA
+What is the two-letter country code for this unit?
+  [Unknown]:  AU
+Is CN=Yang Wang, OU=Hortonworks, O=PS, L=Perth, ST=WA, C=AU correct?
+  [no]:  y
+
+Warning:
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore server/server.jks -destkeystore server/server.jks -deststoretype pkcs12".
+```
+
+After this command, we have
+
+```
+>ll server/
+total 8
+-rw-r--r--  1 ywang  staff  1376 Oct  5 15:04 server.jks
+```
+
+### 2 Generate Server Certificate
+
+```
+>keytool -certreq -alias server -sigalg MD5withRSA -file server/server.csr -keypass 123456 -keystore server/server.jks -storepass 123456
+
+Warning:
+The generated certificate request uses the MD5withRSA signature algorithm which is considered a security risk.
+The JKS keystore uses a proprietary format. It is recommended to migrate to PKCS12 which is an industry standard format using "keytool -importkeystore -srckeystore server/server.jks -destkeystore server/server.jks -deststoretype pkcs12".
+```
+
+After this command, we have
+
+
+```
+>ll server/
+total 16
+-rw-r--r--  1 ywang  staff   725 Oct  5 15:25 server.csr
+-rw-r--r--  1 ywang  staff  1376 Oct  5 15:04 server.jks
+```
