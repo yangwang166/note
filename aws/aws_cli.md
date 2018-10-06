@@ -60,3 +60,11 @@ ImportError: cannot import name 'AliasedEventEmitter'
 ```
 
 Solved by `pip install awscli --upgrade`
+
+## Issues: copy file from s3 to a EC2 instance
+
+```
+aws s3 cp --recursive s3://bucket_name /home/ec2-user --region eu-west-2
+```
+
+Using `--region` when the region of ec2 is not same as s3 bucket
