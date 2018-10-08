@@ -187,3 +187,59 @@ curl http://169.254.169.254/latest/meta-data/user-data # Give you the bootstrap 
 * ![Placement Group](../images/aws_ec2/placement_group.png)
 
 ## EFS(NFS)
+
+## Lambda
+
+What is Lambda
+
+* ![Lambda3](../images/aws_ec2/lambda3.png)
+
+* ![Lambda2](../images/aws_ec2/lambda2.png)
+
+* ![Lambda1](../images/aws_ec2/lambda1.png)
+
+* Scale up VS Scale out
+  * Lambda scale out
+
+* ![Lambda4](../images/aws_ec2/lambda4.png)
+
+Supported Language
+  * Node.js
+  * Java
+  * Python
+  * C#
+
+Lambda Price
+* Number of requests
+  * First 1 million requests are free. $0.20 per 1 million request thereafter.
+* Duration
+  * Duration is calculated from the time your code begins executing until it returns or otherwise terminates, rounded up to the nearest 100ms. The price depends on the amount of memory you allocate to your function. You are charged $0.00001667 for every GB-second used.
+
+Why is lambda cool
+* No servers
+* Continuous scaling
+* super super super cheap!
+
+* Lambda is the backend of Alexa
+
+Tips
+* Lambda scales out (not up) automatically
+* Lambda functions are independent, 1 event = 1 function
+* Lambda is serverless
+* Know what services are serverless
+  * S3, Dynamo, Api gateway
+* lambda functions can trigger other lambda functions, 1 event can = x functions if functions trigger other functions
+* Architectures can get extremely complicated, AWS X-ray allows you to debug what is happening
+* Lambda can do things globally, you can use it to back up S3 buckets to other S3 buckets, etc
+* know your triggers
+  * API Gateway
+  * AWS IoT
+  * CloudWatch Events
+  * CloudWatch Logs
+  * CodeCommit
+  * Cognito Sync Trigger
+  * DynamoDB
+  * Kinesis
+  * S3
+  * SNS
+  * SQS 
