@@ -151,3 +151,39 @@
     * ![vs](../images/aws_ec2/ebs_vs_instance.png)
   * tips
     * ![ami tips](../images/aws_ec2/ebs_tips.png)
+
+
+## Using Bootstrap Script
+
+You can run your custom command during instance boot:
+
+```
+#!/bin/bash
+yum install httpd -y
+yum update -y
+aws s3 cp s3://YOURBUCKETNAMEHERE/index.html /var/www/html/
+service httpd start
+chkconfig httpd on
+```
+
+## Get ec2 instance metadata
+
+```
+curl http://169.254.169.254/latest/meta-data/public-ipv4 # Give IPv4
+curl http://169.254.169.254/latest/meta-data/user-data # Give you the bootstrap script
+```
+
+## Autoscaling
+
+* Launch configuration
+* Auto scaling groups
+
+## EC2 placement group
+
+* Cluster placement group
+  * Big data
+* Spread placement group
+  * Two important instance in different AZ(distinct underlying hardware)
+* ![Placement Group](../images/aws_ec2/placement_group.png)
+
+## EFS(NFS)
