@@ -28,6 +28,11 @@
 * [AWS Cli](./aws/aws_cli.md)
 * [AWS Certificates](./aws/aws_certificates.md)
 * [AWS Questions](./aws/aws_questions.md)
+* [AWS Polly Services](./aws/polly_site.md)
+* [AWS Elasticsearch](./aws/elastic.md)
+* [AWS ELB](./aws/elb.md)
+* [AWS Serverless](./aws/serverless_site.md)
+* [AWS CloudWatch](./aws/cloudwatch.md)
 
 ## Hadoop Ecosystem
 
@@ -78,8 +83,6 @@
 ## My Certificates
 
 * [Hortonworks](./certificates/hortonworks.md)
-
-
 
 ## Todo List
 
