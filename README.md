@@ -42,6 +42,7 @@
 * [Druid General Usage](./hdp/druid.md)
 * [Uninstall Ambari HDP](./hdp/uninstall_ambari_hdp.md)
 * [Run HDP HDF in Docker](./hdp/hdp_hdf_docker.md)
+* [Hive LLAP Related](./hdp/hive.md)
 
 ### HDF
 
