@@ -9,4 +9,15 @@
 * RedHat: old Docker contributor, but their openshift cannot compete Docker Swarm and Mesos
 * RedHat not satisfy Docker's platform strategy
 * Google release kubernetes helps RedHat and CoreOS
-*
+* Google previously have a lmctfy(let me container that for you), but failed
+* CoreOS has etcd
+* Kubernetes: Google+RedHat
+* CNCF:
+  * kubernetes
+  * Prometheus
+  * Fluentd
+  * OpenTracing
+  * CNI
+  * Istio
+  * Operator: Stateful apps deployment
+  * Rook: add Ceph for storage
