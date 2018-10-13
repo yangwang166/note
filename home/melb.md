@@ -1,12 +1,4 @@
-# Melbourne
-
-* Lilydale
-* Belgrave
-* Glen Waveley
-* Alamein
-* Cranbourne
-* Pakenham
-* Frankston
+# Melbourne all in one
 
 ## Suburb
 ![Suburb](../images/home_train/suburb.png)
@@ -14,6 +6,15 @@
 ## Train Line
 ![Train1](../images/home_train/train.png)
 ![Train2](../images/home_train/train1.png)
+
+Lines:
+* Lilydale
+* Belgrave
+* Glen Waveley
+* Alamein
+* Cranbourne
+* Pakenham
+* Frankston
 
 ## School Zone
 * Primary Boy
