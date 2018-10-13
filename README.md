@@ -92,7 +92,7 @@
 
 ## Life
 
-* [Melbourne Train](./home/train.md)
+* [Melbourne](./home/melb.md)
 
 ## Todo List
 
