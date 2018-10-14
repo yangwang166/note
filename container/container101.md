@@ -62,6 +62,25 @@ Docker core:
 * docker commit and push command is to save the top read/write layer, and upload it to Docker Hub
 * Init layer will save `/etc/hosts, /etc/resolv.conf` etc, this thing don't want to be included in `docker commit`
 * Docker image is the core power during 2014~2016 for Docker community. It made `dev-test-deploy` together. And change the future App distribution way: Through Docker Image
+* Docker on Mac, Windows Docker(Hyper-V) is totally different then Linux Docker.
+* docker commit will not include the mount volume outside container, it will only contains the empty folder of the volume mounting point
+* Docker container Flask App view:
+  * ![flask](../images/container/flask.png)
 
-## K8S knowledge point
-* ![k8s](../images/container/k8s_know.png)
+
+## K8S
+* K8S knowledge point
+  * ![k8s](../images/container/k8s_know.png)
+* Google's Brog/Omega
+  * From 2015 April
+  * ![google](../images/container/google.png)
+* K8S arch
+  * ![Arch](../images/container/k8s_arch.png)
+* K8S core concept
+  * ![Core concept](../images/container/k8s_core_concept.png)
+* Container have 2 main parts
+  * Container runtime
+  * Container images
+* K8s using `声明式 API` to declare the relationship between containerised task and container
+* Yarn/Mesos/Swarm focus on based on some rules, put a container to the best nodes, it's a `scheduler`.
+* K8s focus on based on user's purpose and system's rule, automatically handle the relationship between containers, it's a `orchestration`.
