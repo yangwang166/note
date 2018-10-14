@@ -62,4 +62,6 @@ Docker core:
 * docker commit and push command is to save the top read/write layer, and upload it to Docker Hub
 * Init layer will save `/etc/hosts, /etc/resolv.conf` etc, this thing don't want to be included in `docker commit`
 * Docker image is the core power during 2014~2016 for Docker community. It made `dev-test-deploy` together. And change the future App distribution way: Through Docker Image
-* 
+
+## K8S knowledge point
+* ![k8s](../images/container/k8s_know.png)
