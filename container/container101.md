@@ -84,3 +84,5 @@ Docker core:
 * K8s using `声明式 API` to declare the relationship between containerised task and container
 * Yarn/Mesos/Swarm focus on based on some rules, put a container to the best nodes, it's a `scheduler`.
 * K8s focus on based on user's purpose and system's rule, automatically handle the relationship between containers, it's a `orchestration`.
+
+## Deploy K8S
