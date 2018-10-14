@@ -21,3 +21,45 @@
   * Istio
   * Operator: Stateful apps deployment
   * Rook: add Ceph for storage
+
+## Container basic: From Process to Docker Container
+
+* Give me a container, and run `/bin/sh` in it, and give me a console to communicate with it:
+  * `docker run -it busybox /bin/sh`
+* Container is just a special process
+* There is no real Docker container actually run in the host
+* Only create process with many `Namespace` parameter.
+  * `int pid = clone(main_function, stack_size, CLONE_NEWPID | SIGCHLD, NULL);`
+  * VS
+  * `int pid = clone(main_function, stack_size, SIGCHLD, NULL);`
+* Wrong
+  * ![Hypervisor Vs Docker](../images/container/docker_hypervisor.png)
+* Right:
+  * ![Hypervisor Vs Docker](../images/container/docker_hypervisor2.png)
+
+
+## Container basic: Separation(Namespace) and Constraint(cgroup)
+* Cgroup: Linux Control Group
+  * CPU
+  * Memory
+  * Disk
+  * Network IO
+
+## Deep in to Container Image
+
+Docker core:
+* Launch Linux Namespace configuration
+* Config cgroup
+* exchange process rootfs
+  * rootfs only have file, etc, folder, don't have linux core
+  * OS only load core during boot up
+  * All container in a host share same linux core
+  * So if your app need to config core parameter or extra core plugin module, or communicate with core, it will impact on all containers on this host
+  * It's a big different between VM, VM have virtual hardware and complete Guest OS.
+  * And it's advantage is a key feature: consistency, `rootfs` provided consistency
+* Ubuntu:lastest image
+  * ![ubuntu image](../images/container/ubuntu_latest.png)
+* docker commit and push command is to save the top read/write layer, and upload it to Docker Hub
+* Init layer will save `/etc/hosts, /etc/resolv.conf` etc, this thing don't want to be included in `docker commit`
+* Docker image is the core power during 2014~2016 for Docker community. It made `dev-test-deploy` together. And change the future App distribution way: Through Docker Image
+* 
