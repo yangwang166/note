@@ -86,3 +86,180 @@ Docker core:
 * K8s focus on based on user's purpose and system's rule, automatically handle the relationship between containers, it's a `orchestration`.
 
 ## Deploy K8S
+
+### Prepare
+
+* Linux with 3.1+ core, ubuntu 16.04
+* x86 or ARM
+* need Internet access
+* need access gcr.io, quay.io docker registry
+* node spec
+  * 2 cpu
+  * 8GB Mem
+  * 30GB disk for docker image and log
+* Procedure
+  1. install Docker and kubeadm on all nodes
+  2. deploy kubernetes master
+  3. deploy container network plugin
+  4. deploy kubernetes worker
+  5. deploy dashboard visualisation plugin
+  6. deploy container plugin
+
+### Install Kubeadm and Docker
+
+Install kubeadm, kubelet, kubectl, kubenetes-cni:
+
+```bash
+curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+cat <<EOF > /etc/apt/sources.list.d/kubernetes.list
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+EOF
+
+apt-get update
+apt-get install -y docker.io kubeadm
+
+# using 1.11
+apt remove kubelet kubectl kubeadm
+apt install kubelet=1.11.3-00
+apt install kubectl=1.11.3-00
+apt install kubeadm=1.11.3-00
+
+```
+
+## deploy k8s master
+
+YAML for kubeadm
+
+```Yaml
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+controllerManagerExtraArgs:
+  horizontal-pod-autoscaler-use-rest-clients: "true"
+  horizontal-pod-autoscaler-sync-period: "10s"
+  node-monitor-grace-period: "10s"
+apiServerExtraArgs:
+  runtime-config: "api/all=true"
+kubernetesVersion: "stable-1.11"
+
+```
+
+Disable swap
+
+```bash
+run swapoff -a #this will immediately disable swap
+# remove any swap entry from /etc/fstab
+```
+
+```bash
+kubeadm init --config kubeadm.yaml
+
+```
+
+Config security
+
+```
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+Try `kubectl get nodes`
+
+We get:
+
+```
+root@gpuserver:~/study/k8s# kubectl get nodes
+NAME        STATUS     ROLES     AGE       VERSION
+gpuserver   NotReady   master    2m        v1.11.3
+```
+
+Try `kubectl describe node gpuserver`
+
+We know network plugin not be deployed
+
+Try `kubectl get pods -n kube-system`
+
+* kube-system is a work space (Namespace)
+
+We can also know coredns is pending, it means the network is not ready.
+
+## Deploy network plugin
+
+```bash
+kubectl apply -f https://git.io/weave-kube-1.6
+```
+
+After awhile, 30s
+
+Try `kubectl get pods -n kube-system`
+
+We know coredns is Running now, and there is a `weave-net-hpqcj` be created under `kube-system`
+
+Kubernetes support network plugin, using CNI.
+
+Current container network project have:
+* Flannel
+* Calico
+* Canal
+* Romana
+* Weave
+
+## Deploy k8s worker node
+
+Easy than Master
+
+Master will run 3 Pod
+* kube-apiserver
+* kube-scheduler
+* kube-controller-manager
+
+Worker only need to
+
+1. Install kubeadm and docker
+2. Run the join
+
+```
+kubeadm join 192.168.1.71:6443 --token cd65vo.o1i01kmpannt4g6c --discovery-token-ca-cert-hash sha256:043c9c0ad7580a4fe6062db8614bfbce717a88d6b35c69b50484c702e666
+```
+
+## Config Taint/Toleration to let Master run user Pod
+
+Using a single node k8s
+
+```
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+
+## Deploy Dashboard
+
+```
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
+```
+
+Try `kubectl get pods -n kube-system`
+
+We can see dashboard is running
+
+## Deploy container storage plugin
+
+* Container Consistency Storage
+
+Storage plugin will mount a network or distributed volume in container. So the data volume is not bind with any host.
+
+Current following project can provide k8s with consistency storage
+* Ceph
+* GlusterFS
+* NFS
+* Rook
+
+We will use `Rook` as our storage plugin, which is a wrap of Ceph, but have horizontal scalability, disaster recovery, data migration, monitoring etc. enterprise function.
+
+
+```
+kubectl apply -f https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/operator.yaml
+
+kubectl apply -f https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/cluster.yaml
+
+```
+
+Try `get pods -n rook-ceph-system` and `kubectl get pods -n rook-ceph` to check the Pods in two namespace separately
