@@ -1,4 +1,7 @@
-# Container 101
+# Docker container and orchestration(K8S)
+
+
+## Knowledge before we start
 
 * Docker only package file system, not OS core
 * Docker is a open source project, also a Company now
