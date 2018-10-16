@@ -33,3 +33,15 @@ def check_llap_app_status_in_llap_ga(self, llap_app_name, num_retries, return_im
   percent_desired_instances_to_be_up = 80 # Out of 100.
   llap_app_info = self._get_llap_app_status_info_in_llap_ga(percent_desired_instances_to_be_up/100.0, total_timeout, refresh_rate)
 ```
+
+## Issue:
+
+Check llap task log
+
+We can find the appid from the output in beeline when you run a sql, like `INFO  : Status: Running (Executing on YARN cluster with App id application_1538985297065_1044)`
+
+
+
+```
+yarn logs -applicationId application_1538985297065_1044
+```
