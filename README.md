@@ -91,6 +91,7 @@
 ## My Certificates
 
 * [Hortonworks](./certificates/hortonworks.md)
+* [AWS](./certificates/aws.md)
 
 ## Life
 
