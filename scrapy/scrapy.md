@@ -7,24 +7,26 @@ fetch("https://www.myschool.edu.au/school/50503")
 sel.xpath('//*[@id="body-area"]/div[2]/section[1]/div[1]/ul/li[1]/div[2]').extract()
 ```
 
-## Commend line
+Or we can
 
-### Create a project
+> `scrapy shell 'http://quotes.toscrape.com/'`
+
+## Create a project
 
 > `scrapy startproject quotes_spider`
 
-### Gen project code
+## Gen spider belong to this project
 
 > `cd quotes_spider`
 > `scrapy genspider example example.com`
 > `scrapy genspider quotes quotes.toscrape.com`
 > `scrapy genspider myschool www.myschool.edu.au/school/50503`
 
-### List task
+## List spider
 
 > `scrapy list`
 
-### Edit scrapyer
+## Edit spider
 
 ```python
 # -*- coding: utf-8 -*-
@@ -42,11 +44,11 @@ class MyschoolSpider(scrapy.Spider):
       yield {'School_Name': school_name, 'ICSEA_Score': icsea_score}
 ```
 
-### Run scrapy task
+## Run scrapy spider
 
 > `scrapy crawl myschool`
 
-### Get result
+## Get result
 
 ```bash
 2018-11-07 00:21:31 [scrapy.core.engine] INFO: Spider opened
@@ -58,3 +60,18 @@ class MyschoolSpider(scrapy.Spider):
 {'School_Name': [u'Glenroy Private, Glenroy, VIC'], 'ICSEA_Score': [u'929']}
 2018-11-07 00:21:31 [scrapy.core.engine] INFO: Closing spider (finished)
 ```
+
+## Find Xpath
+
+1. Open the web page in Google Chrome.
+2. Select the text portion you want to extract.
+3. Right-click, and select "Inspect".
+4. Select the HTML code you need, and select "Copy" and then "Copy XPath".
+5. Paste the XPath to your code, test, and edit it, if necessary.
+6. Note that this method copy the "id" but you can change it to the "class" of the same portion if that will work better.
+![xpath](../images/scrapy/CopyXPath.png)
+
+
+## Current level of xpath
+
+> `quote.xpath('.//a')``
