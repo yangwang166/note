@@ -73,6 +73,10 @@
 * [HTTPS Trusted SSL Certificate with Flask/Nginx/Gunicorn](./web/https_ssl_certificate_flask_nginx_gunicorn_supervisor.md)
 * [Markdown syntax](./web/markdown.md)
 
+### Scrapy
+
+* [Scrapy](./scrapy/scrapy.md)
+
 ### Operating System
 
 * [Command OS Command](./os/os_cmd.md)
