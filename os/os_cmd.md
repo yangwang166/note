@@ -70,3 +70,19 @@ Disable a repo
 Find the external mounting point
 
 > `cat /proc/mount | grep what_you_want`
+
+## System monitoring
+
+Watch memory change
+
+> `watch -n 2 free -h`
+
+## Tmux
+
+Start a session
+
+> `tmux new -s dev`
+
+Attach a session
+
+> `tmux attach -t dev`
