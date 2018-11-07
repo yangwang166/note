@@ -44,12 +44,14 @@
 
 ### HDP
 
+* [Hive LLAP General Usage](./hdp/hive.md)
 * [Druid General Usage](./hdp/druid.md)
+* [Yarn General Usage](./hdp/yarn.md)
+* [Spark General Usage](./hdp/spark.md)
+* [Phoenix General Usage](./hdp/phoenix.md)
 * [Uninstall Ambari HDP](./hdp/uninstall_ambari_hdp.md)
 * [Run HDP HDF in Docker](./hdp/hdp_hdf_docker.md)
-* [Hive LLAP Related](./hdp/hive.md)
 * [Deploy 8 nodes HDP with Ansible](./hdp/8_nodes_hdp3.md)
-* [Yarn](./hdp/yarn.md)
 
 ### HDF
 
