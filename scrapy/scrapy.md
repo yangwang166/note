@@ -75,3 +75,9 @@ class MyschoolSpider(scrapy.Spider):
 ## Current level of xpath
 
 > `quote.xpath('.//a')``
+
+## Export to csv / json / xml
+
+> `scrapy crawl quotes -o items.csv`
+> `scrapy crawl quotes -o items.json`
+> `scrapy crawl quotes -o items.xml`
