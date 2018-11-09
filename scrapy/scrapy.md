@@ -132,3 +132,19 @@ class MyschoolSpider(scrapy.Spider):
 
 * Before web scraping, prepare your code to be "polite": do not `unnecessarily disable robots.txt` of the website; space out your requests a bit so that you do not hammer the site's server; and it is better to run your spiders during off-peak traffic hours of the website.
 
+## ScrapingHub
+
+Install shub
+
+> pip install shub
+
+Login to shub, but you have to register a account beforehand.
+
+> shub login
+
+Deploy to shub, you shoud in the project folder
+
+> shub deploy your_project_id
+
+Then you can run the spider in shub and also can schedule it to run periodically. 
+
