@@ -148,3 +148,73 @@ Deploy to shub, you shoud in the project folder
 
 Then you can run the spider in shub and also can schedule it to run periodically. 
 
+## Login to websites with scrapy
+
+```python
+# -*- coding: utf-8 -*-
+from scrapy import Spider
+from scrapy.http import FormRequest
+from scrapy.loader import ItemLoader
+
+from quotes_spider.items import QuotesSpiderItem
+
+class QuotesSpider(Spider):
+
+    name = 'quotes'
+    allowed_domains = ['quotes.toscrape.com']
+    start_urls = ['http://quotes.toscrape.com/login']
+
+    def parse(self, response):
+        csrf_token = response.xpath('//*[@name="csrf_token"]/@value').extract_first()
+
+        yield FormRequest('http://quotes.toscrape.com/login',
+                          formdata = {'csrf_token': csrf_token,
+                                      'username': 'foobar',
+                                      'password': 'foobar'},
+                          callback = self.scrape_home_page)
+
+    def scrape_home_page(self, response):
+        if response.xpath('//a[text()="Logout"]'):
+            self.log('You logged in!')
+
+        l = ItemLoader(item = QuotesSpiderItem(), response = response)
+
+        h1_tag = response.xpath('//h1/a/text()').extract_first()
+        tags = response.xpath('//*[@class="tag-item"]/a/text()').extract()
+
+        l.add_value('h1_tag', h1_tag)
+        l.add_value('tags', tags)
+
+        return l.load_item()
+```
+
+## Scrapy as a Standalone script
+
+```python 
+# -*- coding: utf-8 -*-
+from scrapy import Spider
+from scrapy.http import FormRequest
+
+class QuotesSpider(Spider):
+    name = 'quotes'
+    start_urls = ['http://quotes.toscrape.com/login']
+
+    def parse(self, response):
+        csrf_token = response.xpath('//*[@name="csrf_token"]/@value').extract_first()
+
+        return FormRequest('http://quotes.toscrape.com/login',
+                          formdata = {'csrf_token': csrf_token,
+                                      'username': 'foobar',
+                                      'password': 'foobar'},
+                          callback = self.scrape_home_page)
+
+    def scrape_home_page(self, response):
+        h1_tag = response.xpath('//h1/a/text()').extract_first()
+        tags = response.xpath('//*[@class="tag-item"]/a/text()').extract()
+
+        print h1_tag
+        print tags
+```
+
+Then run: `scrapy runspider quotes.py`
+

@@ -1,5 +1,9 @@
 # Using Polly to make a server-less service
 
+## Note
+
+Change to North Virginia Region. Since not all region support Polly skills.
+
 ## Arch
 
 * ![Arch](../images/polly_site/arch.png)
@@ -10,6 +14,7 @@
 * key: id
 
 Create S3 bucket
+
 * datasci.guru
 * text2mp3bucket
 
@@ -60,20 +65,20 @@ Create S3 bucket
 
 ``` json
 {
-	"Version": "2012-10-17",
-	"Statement": [
-		{
-			"Sid": "PublicReadGetObject",
-			"Effect": "Allow",
-			"Principal": "*",
-			"Action": [
-				"s3:GetObject"
-			],
-			"Resource": [
-				"arn:aws:s3:::datasci.guru/*"
-			]
-		}
-	]
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "PublicReadGetObject",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+                "s3:GetObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::datasci.guru/*"
+            ]
+        }
+    ]
 }
 ```
 
@@ -133,8 +138,8 @@ def lambda_handler(event, context):
 
 ``` json
 {
-	"voice" : "Joanna",
-	"text" : "Hello Cloud Gurus!"
+    "voice" : "Joanna",
+    "text" : "Hello Cloud Gurus!"
 }
 ```
 
@@ -185,7 +190,7 @@ def lambda_handler(event, context):
         textBlock = rest[begin:end]
         rest = rest[end:]
         textBlocks.append(textBlock)
-    textBlocks.append(rest)            
+    textBlocks.append(rest)
 
     #For each block, invoke Polly API, which will transform text into audio
     polly = boto3.client('polly')
@@ -306,11 +311,10 @@ def lambda_handler(event, context):
 
 * datasci.guru
 
-
 ## Build Alexa Skill
 
 * Create Lambda function with Serverless Application Repository
 * use: alexa-skills-kit-nodejs-factskill
 * Go to https://github.com/alexa/skill-sample-nodejs-fact
 * Go to models/en-US.json
-* Will create a CloudFormation 
+* Will create a CloudFormation
