@@ -47,6 +47,7 @@
 * [Hive LLAP General Usage](./hdp/hive.md)
 * [Druid General Usage](./hdp/druid.md)
 * [Yarn General Usage](./hdp/yarn.md)
+* [HBase General Usage](./hdp/hdp.md)
 * [Spark General Usage](./hdp/spark.md)
 * [Phoenix General Usage](./hdp/phoenix.md)
 * [Uninstall Ambari HDP](./hdp/uninstall_ambari_hdp.md)
