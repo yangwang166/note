@@ -33,6 +33,15 @@ To see which process using the file
 
 Ref: [lsof Command Usage and Examples](https://www.slashroot.in/lsof-command-usage-and-examples)
 
+## Check GPU device
+
+To check device
+> `/sbin/lspci`
+
+To Check driver
+
+> `navidia-smi`
+
 ## yum
 
 Check package version
@@ -86,3 +95,11 @@ Start a session
 Attach a session
 
 > `tmux attach -t dev`
+
+## iostat
+
+Useful to check the disk io and cpu usage
+
+Check iostat 5 times and 1 sec interval
+
+> `iostat 1 5`
