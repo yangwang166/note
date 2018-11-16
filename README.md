@@ -85,6 +85,7 @@
 * [Command OS Command](./os/os_cmd.md)
 * [Stuck in waiting for header when apt update in ubuntu](./os/solve_waiting_for_header_apt_update.md)
 * [What is your tmpfs devtmpfs in CentOS 7](./os/tmpfs_devtmpfs_centos7.md)
+* [How to attach a iSCSI device](./os/attach_scsi.md)
 
 ### DB
 
