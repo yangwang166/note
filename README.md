@@ -1,9 +1,10 @@
 # Study Notes and HowTo
 
-## Showcase
+## Showcases
 
 * [AWS serverless arch: A text to voice app](http://datasci.guru)
 * [Web crawler: Melb House info from realestate and integrate with myschool and google map](http://)
+* [People Counter](http://)
 
 ## Machine Learning & Deep Learning
 
