@@ -1,5 +1,10 @@
 # Study Notes and HowTo
 
+## Showcase
+
+* [AWS serverless arch: A text to voice app](http://datasci.guru)
+* [Web crawler: Melb House info from realestate and integrate with myschool and google map](http://)
+
 ## Machine Learning & Deep Learning
 
 ### Self Driving Car
@@ -34,13 +39,11 @@
 * [AWS Serverless](./aws/serverless_site.md)
 * [AWS CloudWatch](./aws/cloudwatch.md)
 
-
 ## Container & Orchestration
 
 * [Container 101](./container/container101.md)
 
 ## Hadoop Ecosystem
-
 
 ### HDP
 
@@ -90,11 +93,11 @@
 ### DB
 
 * [Oracle](./db/oracle.md)
+* [Mongo](./db/mongo.md)
 
 ### Git
 
 * [Git General](./git/git.md)
-
 
 ## My Certificates
 
