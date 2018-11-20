@@ -103,3 +103,19 @@ Useful to check the disk io and cpu usage
 Check iostat 5 times and 1 sec interval
 
 > `iostat 1 5`
+
+## Change uid and gid of a user
+
+* Foo’s old UID: 1005
+* Foo’s new UID: 2005
+* Our sample group name: foo
+* Foo’s old GID: 2000
+* Foo’s new GID: 3000
+
+```bash
+usermod -u 2005 foo
+groupmod -g 3000 foo
+find / -group 2000 -exec chgrp -h foo {} \;
+find / -user 1005 -exec chown -h foo {} \;
+```
+

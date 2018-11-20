@@ -50,3 +50,6 @@ Additional notes:
 * BlockCache is beneficial for both random and sequential read operations although it is of primary consideration for random reads.
 * All regions hosted by a RegionServer share the same BlockCache.
 * You can turn BlockCache caching on or off per column family.
+
+## Command line
+

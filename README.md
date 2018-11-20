@@ -4,6 +4,7 @@
 
 * [AWS serverless arch: A text to voice app](http://datasci.guru)
 * [Web crawler: Melb House info from realestate and integrate with myschool and google map](http://)
+* [AWS Alexa Skill: You can subscribe my skill, My Hadoop Journey](http://)
 * [People Counter](http://)
 
 ## Machine Learning & Deep Learning
