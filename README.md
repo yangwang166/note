@@ -74,6 +74,18 @@
 
 * [SSL Related](./security/ssl.md)
 
+## Python
+
+* [Numpy](./python/numpy.md)
+
+## Java
+
+* [Jar](./java/jar.md)
+
+## Devops
+
+* [devops](./devops/devops.md)
+
 ## Misc
 
 ### Web
